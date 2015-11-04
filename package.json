@@ -1,0 +1,25 @@
+{
+  "name": "meal-planning",
+  "version": "1.0.0",
+  "description": "Family meal planning app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkobrosky/MealPlanning.git"
+  },
+  "author": "JKobrosky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkobrosky/MealPlanning/issues"
+  },
+  "homepage": "https://github.com/jkobrosky/MealPlanning#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.3"
+  }
+}
