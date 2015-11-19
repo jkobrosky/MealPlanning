@@ -1,0 +1,27 @@
+.navigation-container {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.top-row {
+  width: 100%;
+  height: 100px;
+  outline: 1px solid black;
+  margin: 0;
+}
+
+.left-column {
+  outline: 1px solid red;
+  display: block;
+
+  // Media query to display none the left column at phone/tablet size
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.right-column {
+  outline: 1px solid blue;
+}
