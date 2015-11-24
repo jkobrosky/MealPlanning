@@ -1,1 +1,21 @@
 <span>Shopping List<span>
+
+<div class="list-input">
+  <form>
+    <div class="form-group">
+      <label for="list-title">List Title</label>
+      <input type="text" class="form-control" id="list-title" ng-model="list.title" placeholder="List Title">
+    </div> <!-- End of 'form-group' -->
+
+    <div class="form-group">
+      <label for="list-contents">List Contents</label>
+      <input type="text" class="form-control" id="list-contents" ng-model="list.contents" placeholder="List Contents">
+    </div> <!-- End of 'form-group' -->
+  </form>
+</div>
+
+<div class="list-output">
+  <span>Title: {{ list.title }}</span>
+  <br />
+  <span>Contents: {{ list.contents }}</span>
+</div> <!-- End of 'list-output' -->

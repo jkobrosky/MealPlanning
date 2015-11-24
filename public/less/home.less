@@ -7,14 +7,33 @@
 
 .top-row {
   width: 100%;
-  height: 100px;
-  outline: 1px solid black;
+  //height: 100px;
+  //outline: 1px solid black;
   margin: 0;
 }
 
 .left-column {
-  outline: 1px solid red;
+  //outline: 1px solid red;
   display: block;
+
+  .controls-container {
+
+    .home-controls {
+      margin: 12px;
+
+      .row-label-container{
+        margin-bottom: 10%;
+
+        .meal-time-row {
+          height: 100px;
+          width: 300px;
+          padding: 20px;
+          border: 1px solid #000;
+          //margin: 10% 0;
+        }
+      }
+    }
+  }
 
   // Media query to display none the left column at phone/tablet size
   @media (max-width: 768px) {
@@ -23,5 +42,12 @@
 }
 
 .right-column {
-  outline: 1px solid blue;
+  //outline: 1px solid blue;
+
+  .meal-content {
+    margin: 4% 0;
+    height: 75px;
+    width: 100px;
+    border: 1px solid #000;
+  }
 }
