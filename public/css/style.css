@@ -10,7 +10,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 #nav-section {
-  height: 100%;
+  max-height: 42px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -28,6 +28,10 @@ body {
 #nav-section .navigation .profile-container .dropdown .account-dropdown {
   background: none;
   border: none;
+}
+#nav-section .navigation .mini-nav .content-menu {
+  padding: 12px;
+  font-size: 1.5em;
 }
 .navigation-container {
   margin: 0;

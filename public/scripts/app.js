@@ -3,7 +3,8 @@ angular.module('meal-planning', ['ngRoute'])
 .config(function($routeProvider) {
   $routeProvider
   .when('/home', {
-    templateUrl: 'views/home.html'
+    templateUrl: 'views/home.html',
+    controller: 'HomeController'
   })
 
   .when('/recipes', {

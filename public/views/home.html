@@ -3,34 +3,58 @@
 </div> <!-- End of 'top-row' -->
 
 <div class="row main-content">
-  <div class="left-column col-xs-12 col-sm-12 col-md-4 col-lg-4">
+  <div class="left-column col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
     <div class="controls-container">
       <div class="home-controls">
         <div class=row-label-container>
           <span class="row-label breakfast-row">Breakfast</span>
-          <div class="meal-time-row"></div>
+          <div class="meal-time-row">
+            <form>
+              <input class="breakfast-input form-control" type="text" placeholder="Breakfast name" ng-model="breakfast.name">
+              <input class="breakfast-input form-control" type="text" placeholder="Ingredients" ng-model="breakfast.ingredients">
+              <button class="inline btn btn-sm" ng-click="newBreakfastItem(breakfast)">Submit</button>
+            </form>
+          </div>
         </div>
 
         <div class=row-label-container>
           <span id="lunch" class="row-label lunch-row">Lunch</span>
-          <div class="meal-time-row"></div>
+          <div class="meal-time-row">
+            <form>
+              <input class="lunch-input form-control" type="text" placeholder="Lunch name" ng-model="lunch.name">
+              <input class="lunch-input form-control" type="text" placeholder="Ingredients" ng-model="lunch.ingredients">
+              <button class="inline btn btn-sm" ng-click="newLunchItem(lunch)">Submit</button>
+            </form>
+          </div>
         </div>
 
         <div class=row-label-container>
           <span id="dinner" class="row-label dinner-row">Dinner</span>
-          <div class="meal-time-row"></div>
+          <div class="meal-time-row">
+            <form>
+              <input class="dinner-input form-control" type="text" placeholder="Dinner menu" ng-model="dinner.name">
+              <input class="dinner-input form-control" type="text" placeholder="Dinner menu" ng-model="dinner.ingredients">
+              <button class="inline btn btn-sm" ng-click="newDinnerItem(dinner)">Submit</button>
+            </form>
+          </div>
         </div>
 
         <div class=row-label-container>
           <span id="snacks" class="row-label snacks-row">Snacks</span>
-          <div class="meal-time-row"></div>
+          <div class="meal-time-row">
+            <form>
+              <input class="snack-input form-control" type="text" placeholder="Snack menu" ng-model="snack.name">
+              <input class="snack-input form-control" type="text" placeholder="Snack menu" ng-model="snack.ingredients">
+              <button class="inline btn btn-sm" ng-click="newSnackItem(snack)">Submit</button>
+            </form>
+          </div>
         </div>
       </div> <!-- End of 'home-controls' -->
     </div> <!-- End of 'main-controls' -->
   </div> <!-- End of 'left-column' -->
 
-  <div class="right-column col-xs-0 col-sm-0 col-md-8 col-lg-8">
+  <div class="right-column col-xs-8 col-sm-8 col-md-8 col-lg-8">
     <div class="meal-content">
       <span>This is the Right Column</span>
     </div> <!-- End of 'meal-content' -->

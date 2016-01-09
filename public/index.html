@@ -18,7 +18,7 @@
 
   <body ng-app="meal-planning">
     <div class="page-container">
-      <div class="col-xs-0 col-sm-0 col-md-12 col-lg-12 navigation-container" id="nav-section">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 navigation-container" id="nav-section">
         <navigation-directive></navigation-directive>
       </div> <!-- End of 'navigation-container' -->
       <ng-view></ng-view>
@@ -44,9 +44,10 @@
     <!-- Controllers -->
     <script type="text/javascript" src="scripts/controllers/ShoppingController.js"></script>
     <script type="text/javascript" src="scripts/controllers/FavoritesController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/HomeController.js"></script>
 
     <!-- Services -->
-
+    <script type="text/javascript" src="scripts/services/homeService.js"></script>
 
   </body>
 </html>

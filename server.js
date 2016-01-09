@@ -14,7 +14,28 @@ var app = express();
 
     // Middleware
     app.use(cors());
-    app.use(bodyParser.json());
+
+    // Expanding server capacity
+    app.use(bodyParser.json({limit: '50mb'}));
+    app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
+    // Controllers
+    var Breakfast = require('./server/controllers/BreakfastController.js');
+    var Lunch = require('./server/controllers/LunchController.js');
+
+
+    ///////////////////////////////////////////////////
+    ////                   Rest API                ////
+    ///////////////////////////////////////////////////
+
+    // Breakfast
+    app.post('/api/breakfast', Breakfast.createNewBreakfast);
+    app.get('/api/breakfast', Breakfast.getAllBreakfast);
+
+    // Lunch
+    app.post('/api/lunch', Lunch.createNewLunch);
+    app.get('/api/lunch', Lunch.getAllLunch);
+
 
     // Connect mongoose
     mongoose.connect(mongoUri);
