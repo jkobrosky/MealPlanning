@@ -1,6 +1,6 @@
 var Lunch = require('../models/LunchModel.js');
 
-exports.createNewlunch = function(req, res) {
+exports.createNewLunch = function(req, res) {
   console.log('req.body ', req.body);
   new Lunch(req.body)
   .save(function(err, data) {

@@ -22,11 +22,16 @@ var app = express();
     // Controllers
     var Breakfast = require('./server/controllers/BreakfastController.js');
     var Lunch = require('./server/controllers/LunchController.js');
+    var Food = require('./server/controllers/FoodController.js');
 
 
     ///////////////////////////////////////////////////
     ////                   Rest API                ////
     ///////////////////////////////////////////////////
+
+    // Add food item
+    app.post('/api/newFoodItem', Food.createNewFood);
+    app.get('/api/foodItems', Food.getAllFoods);
 
     // Breakfast
     app.post('/api/breakfast', Breakfast.createNewBreakfast);
