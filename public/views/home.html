@@ -4,40 +4,74 @@
 
 <div class="main-container">
   <div class="meal-container">
-
     <div class="favorite">
       <i class="fa fa-star-o favorite-star"></i>
     </div>
 
-    <form>
-      <div class="group">
-        <input type="text" class="meal-name" required>{{ breakfast.name }}</input>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label class="mealname-label">breakfast name</label>
-      </div>
-
-      <div class="small-group">
-        <input type="text" class="weblink" required>{{ breakfast.weblink }}</input>
-        <label class="weblink-label">web address</label>
-      </div>
-
-      <div class="small-group">
-        <input type="text text-small" class="cooktime" required>{{ breakfast.cooktime }}</input>
-        <label class="cooktime-label">cook time: </label>
-      </div>
-
-      <div class="small-group">
-        <input type="text text-small" class="mealtype" required>{{ breakfast.timelabel }}</input>
-        <label class="mealtype-label">meal type</label>
-      </div>
-    </form>
+    <div class="meal-info">
+      <div class="display-name">Food Title Goes Here{{ meal.name }}</div>
+      <div class="display-weblink">www.foodnetwork.com/rosemarychicken{{ meal.weblink }}</div>
+      <div class="display-cooktime">cooktime: 45min{{ meal.cooktime }}</div>
+      <div class="display-type">Dinner{{ meal.type }}</div>
+    </div> <!-- 'meal-info' -->
 
     <div class="breakfast-expand-container">
-      <a href="#">
+      <a data-toggle="modal" data-target="#inputFoodModal">
         <i class="fa fa-chevron-down expand-arrow"></i>
-        <span class="expand">Expand</span>
+        <span class="expand">Edit</span>
       </a>
     </div>
-  </div><!-- 'breakfast-container' -->
+  </div><!-- 'meal-container' -->
 </div><!-- 'main-container' -->
+
+<div class="modal openModal" id="inputFoodModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="favorite">
+        <i class="fa fa-star-o favorite-star"></i>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="group">
+            <input type="text" class="meal-name" required>{{ meal.name }}</input>
+            <span class="highlight"></span>
+            <!-- <span class="bar"></span> -->
+            <label class="mealname-label">meal name</label>
+          </div>
+
+          <div class="small-group">
+            <input type="text" class="weblink" required>{{ meal.weblink }}</input>
+            <label class="weblink-label">web address</label>
+          </div>
+
+          <div class="small-group">
+            <input type="text text-small" class="cooktime" required>{{ meal.cooktime }}</input>
+            <label class="cooktime-label">cook time: </label>
+          </div>
+
+          <div class="small-group">
+            <input type="text text-small" class="mealtype" required>{{ meal.type }}</input>
+            <label class="mealtype-label">meal type</label>
+          </div>
+        </form>
+
+        <div class="ingredients-list">
+          <span class="text subtitle">Ingredients</span>
+          <ul class="list-inline">
+            <li class="text small-text" ng-repeat="item in ingredientsList">{{ item.name }}</li>
+          </ul>
+        </div>
+
+        <div class="notes">
+          <textarea class="form-control notes-input" rows="3" placeholder="Notes..."></textarea>
+        </div>
+
+      </div><!-- 'modal-body' -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-lg btn-block submit-food-btn">
+          Submit
+        </button><!-- 'submit-food-btn' -->
+      </div><!-- 'modal-footer' -->
+    </div><!-- 'modal-content' -->
+  </div> <!-- 'modal-dialog' -->
+</div><!-- 'modal' -->

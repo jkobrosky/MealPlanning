@@ -68,4 +68,32 @@ angular.module('meal-planning')
     });
   }
 
+  this.getIngredients = function() {
+    return ingredientsList;
+  }
+
+  // Fake data - always a bad practice but oh well
+  var ingredientsList = [
+    {
+      name: 'Avocado',
+      qty: 1
+    },
+    {
+      name: 'Red Onion',
+      qty: 1
+    },
+    {
+      name: 'Chopped Garlic',
+      qty: 1
+    },
+    {
+      name: 'Keylime Juice',
+      qty: '1 oz'
+    },
+    {
+      name: 'Salt and Pepper',
+      qty: 'a pinch'
+    }
+  ]
+
 })

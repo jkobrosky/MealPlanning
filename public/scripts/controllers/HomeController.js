@@ -1,6 +1,10 @@
 angular.module('meal-planning')
 .controller('HomeController', function($scope, homeService){
 
+  $scope.getIngredients = function() {
+    $scope.ingredientsList = homeService.getIngredients();
+  }
+
   $scope.newBreakfastItem = function(breakfastItem) {
     console.log('breakfast', breakfastItem);
     homeService.createNewBreakfast(breakfastItem)
@@ -40,5 +44,7 @@ angular.module('meal-planning')
       $scope.snack.ingredients = "";
     })
   }
+
+  $scope.getIngredients();
 
 })
