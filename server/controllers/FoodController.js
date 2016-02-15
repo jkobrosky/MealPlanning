@@ -22,3 +22,43 @@ exports.getAllFoods = function(req, res) {
     }
   })
 };
+
+exports.getAllBreakfast = function(req, res) {
+  Food.find({ mealType: "Breakfast" }, function(err, data) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.json(data);
+    }
+  })
+};
+
+exports.getAllLunch = function(req, res) {
+  Food.find({ mealType: "Lunch" }, function(err, data) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.json(data);
+    }
+  })
+};
+
+exports.getAllDinner = function(req, res) {
+  Food.find({ mealType: "Dinner" }, function(err, data) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.json(data);
+    }
+  })
+};
+
+exports.getAllSnacks = function(req, res) {
+  Food.find({ mealType: "Snack" }, function(err, data) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.json(data);
+    }
+  })
+};

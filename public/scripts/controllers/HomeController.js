@@ -1,50 +1,65 @@
 angular.module('meal-planning')
-.controller('HomeController', function($scope, homeService){
+.controller('HomeController', function($scope, homeService, infoStorage){
 
   $scope.getIngredients = function() {
     $scope.ingredientsList = homeService.getIngredients();
   }
 
-  $scope.newBreakfastItem = function(breakfastItem) {
-    console.log('breakfast', breakfastItem);
-    homeService.createNewBreakfast(breakfastItem)
+  $scope.getMeals = function() {
+    homeService.getMeals()
     .then(function(response) {
-      console.log('response', response);
-      $scope.breakfast.name = "";
-      $scope.breakfast.ingredients = "";
+      $scope.meals = response;
     })
   }
 
-  $scope.newLunchItem = function(lunchItem) {
-    console.log('lunchItem ', lunchIten);
-    homeService.createNewLunch(lunchItem)
+  $scope.getBreakfasts = function() {
+    homeService.getBreakfasts()
     .then(function(response) {
-      console.log('response ', response);
-      $scope.lunch.name = "";
-      $scope.lunch.ingredients = "";
+      $scope.breakfasts = response;
     })
   }
 
-  $scope.newDinnerItem = function(dinnerItem) {
-    console.log('dinnerItem ', dinnerItem);
-    homeService.createNewDinner(dinnerItem)
+  $scope.getLunches = function() {
+    homeService.getLunches()
     .then(function(response) {
-      console.log('response ', response);
-      $scope.dinner.name = "";
-      $scope.dinner.ingredients = "";
+      $scope.lunches = response;
     })
   }
 
-  $scope.newSnackItem = function(snackItem) {
-    console.log('snackItem ', snackItem);
-    homeService.createNewSnack(snackItem)
+  $scope.getDinners = function() {
+    homeService.getDinners()
+    .then(function(response) {
+      $scope.dinners = response;
+    })
+  }
+
+  $scope.getSnacks = function() {
+    homeService.getSnacks()
+    .then(function(response) {
+      $scope.snacks = response;
+    })
+  }
+
+  $scope.createNewFoodItem = function(foodItem) {
+    console.log('foodItem ', foodItem);
+    homeService.createNewFoodItem(foodItem)
     .then(function(response) {
       console.log('response ', response);
-      $scope.snack.name = "";
-      $scope.snack.ingredients = "";
+      //infoStorage.saveMeals(response);
+      $scope.foodItem = {}; // Resets form
+      $scope.getMeals();
+      $scope.getBreakfasts();
+      $scope.getLunches();
+      $scope.getDinners();
+      $scope.getSnacks();
     })
   }
 
   $scope.getIngredients();
+  $scope.getMeals();
+  $scope.getBreakfasts();
+  $scope.getLunches();
+  $scope.getDinners();
+  $scope.getSnacks();
 
 })

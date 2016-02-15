@@ -3,9 +3,11 @@ var mongoose = require('mongoose'),
 
 var foodSchema = new Schema({
   name: { type: String, index: true, required: true },
+  weblink: { type: String },
+  cookTime: { type: String },
+  mealType: { type: String, required: false },
   ingredients: { type: String, index: true, required: true },
-  recipe: { type: String, required: false },
-  mealTime: { type: String, required: false }
+  notes: { type: String, required: false }
 });
 
 module.exports = mongoose.model('Food', foodSchema);

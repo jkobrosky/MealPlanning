@@ -33,9 +33,11 @@ var app = express();
     app.post('/api/newFoodItem', Food.createNewFood);
     app.get('/api/foodItems', Food.getAllFoods);
 
-    // Breakfast
-    app.post('/api/breakfast', Breakfast.createNewBreakfast);
-    app.get('/api/breakfast', Breakfast.getAllBreakfast);
+    // Meal Types
+    app.get('/api/foodItems/breakfast', Food.getAllBreakfast);
+    app.get('/api/foodItems/lunch', Food.getAllLunch);
+    app.get('/api/foodItems/dinner', Food.getAllDinner);
+    app.get('/api/foodItems/snacks', Food.getAllSnacks);
 
     // Lunch
     app.post('/api/lunch', Lunch.createNewLunch);

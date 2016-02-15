@@ -1,72 +1,105 @@
 angular.module('meal-planning')
 .service('homeService', function($http, $q) {
 
-  this.createNewBreakfast = function(breakfastObj) {
+  this.createNewFoodItem = function(foodObj) {
     var dfd = $q.defer();
 
     $http({
       method: "POST",
-      url: "/api/breakfast",
-      data: breakfastObj
+      url: "/api/newFoodItem",
+      data: foodObj
     })
     .then(function(response) {
       dfd.resolve(response.data);
     })
     .catch(function(err) {
       dfd.reject(err);
-    });
+    })
 
     return dfd.promise;
   };
 
-  this.createNewLunch = function(lunchObj) {
+  this.getMeals = function() {
     var dfd = $q.defer();
 
     $http({
-      method: "POST",
-      url: "/api/lunch",
-      data: lunchObj
+      method: "GET",
+      url: "/api/foodItems"
     })
     .then(function(response) {
       dfd.resolve(response.data);
     })
     .catch(function(err) {
       dfd.reject(err);
-    });
+    })
+    return dfd.promise;
   }
 
-  this.createNewDinner = function(dinnerObj) {
+  this.getBreakfasts = function() {
     var dfd = $q.defer();
 
     $http({
-      method: "POST",
-      url: "/api/dinner",
-      data: dinnerObj
+      method: "GET",
+      url: "/api/foodItems/breakfast"
     })
     .then(function(response) {
       dfd.resolve(response.data);
     })
     .catch(function(err) {
       dfd.reject(err);
-    });
+    })
+    return dfd.promise;
   }
 
-
-  this.createNewSnack = function(snackObj) {
+  this.getLunches = function() {
     var dfd = $q.defer();
 
     $http({
-      method: "POST",
-      url: "/api/snack",
-      data: snackObj
+      method: "GET",
+      url: "/api/foodItems/lunch"
     })
     .then(function(response) {
       dfd.resolve(response.data);
     })
     .catch(function(err) {
       dfd.reject(err);
-    });
+    })
+    return dfd.promise;
   }
+
+this.getDinners = function() {
+  var dfd = $q.defer();
+
+  $http({
+    method: "GET",
+    url: "/api/foodItems/dinner"
+  })
+  .then(function(response) {
+    dfd.resolve(response.data);
+  })
+  .catch(function(err) {
+    dfd.reject(err);
+  })
+
+  return dfd.promise;
+}
+
+this.getSnacks = function() {
+  var dfd = $q.defer();
+
+  $http({
+    method: "GET",
+    url: "/api/foodItems/snacks"
+  })
+  .then(function(response) {
+    dfd.resolve(response.data);
+  })
+  .catch(function(err) {
+    dfd.reject(err);
+  })
+
+  return dfd.promise;
+}
 
   this.getIngredients = function() {
     return ingredientsList;
