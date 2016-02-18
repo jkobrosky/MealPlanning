@@ -39,11 +39,6 @@ var app = express();
     app.get('/api/foodItems/dinner', Food.getAllDinner);
     app.get('/api/foodItems/snacks', Food.getAllSnacks);
 
-    // Lunch
-    app.post('/api/lunch', Lunch.createNewLunch);
-    app.get('/api/lunch', Lunch.getAllLunch);
-
-
     // Connect mongoose
     mongoose.connect(mongoUri);
     mongoose.connection.once('open', function() {

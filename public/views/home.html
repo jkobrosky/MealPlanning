@@ -25,15 +25,23 @@
           <span>{{ breakfast.mealType }}</span>
         </div>
       </div> <!-- 'meal-info' -->
-
-      <div class="breakfast-expand-container">
-        <a data-toggle="modal" data-target="#inputFoodModal">
-          <i class="fa fa-chevron-down expand-arrow"></i>
-          <span class="expand">Edit</span>
-        </a>
-      </div>
     </div><!-- 'meal-container' -->
+
+    <!-- Blank template to add a new food item -->
+    <div class="meal-container blank-template">
+      <div class="meal-info">
+        <div id="add-meal">
+          <a data-toggle="modal" data-target="#inputFoodModal">
+            <div class="add-meal-container">
+              <i class="fa fa-plus add-meal-icon"></i>
+              <span class="add-meal-modal">Add A Meal</span>
+            </div>
+          </a>
+        </div>
+      </div> <!-- 'meal-info' -->
+    </div> <!-- 'meal-container' -->
   </div>
+
 
   <!-- start of lunch row -->
   <div class="row lunch-row">
@@ -57,14 +65,21 @@
           <span>{{ lunch.mealType }}</span>
         </div>
       </div> <!-- 'meal-info' -->
-
-      <div class="breakfast-expand-container">
-        <a data-toggle="modal" data-target="#inputFoodModal">
-          <i class="fa fa-chevron-down expand-arrow"></i>
-          <span class="expand">Edit</span>
-        </a>
-      </div>
     </div><!-- 'meal-container' -->
+
+    <!-- Blank template to add a new food item -->
+    <div class="meal-container blank-template">
+      <div class="meal-info">
+        <div id="add-meal">
+          <a data-toggle="modal" data-target="#inputFoodModal">
+            <div class="add-meal-container">
+              <i class="fa fa-plus add-meal-icon"></i>
+              <span class="add-meal-modal">Add A Meal</span>
+            </div>
+          </a>
+        </div>
+      </div> <!-- 'meal-info' -->
+    </div> <!-- 'meal-container' -->
   </div><!-- 'lunch-row' -->
 
   <!-- start of dinner row -->
@@ -89,14 +104,21 @@
           <span>{{ dinner.mealType }}</span>
         </div>
       </div> <!-- 'meal-info' -->
-
-      <div class="breakfast-expand-container">
-        <a data-toggle="modal" data-target="#inputFoodModal">
-          <i class="fa fa-chevron-down expand-arrow"></i>
-          <span class="expand">Edit</span>
-        </a>
-      </div>
     </div><!-- 'meal-container' -->
+
+    <!-- Blank template to add a new food item -->
+    <div class="meal-container blank-template">
+      <div class="meal-info">
+        <div id="add-meal">
+          <a data-toggle="modal" data-target="#inputFoodModal">
+            <div class="add-meal-container">
+              <i class="fa fa-plus add-meal-icon"></i>
+              <span class="add-meal-modal">Add A Meal</span>
+            </div>
+          </a>
+        </div>
+      </div> <!-- 'meal-info' -->
+    </div> <!-- 'meal-container' -->
   </div>
 
   <!-- snacks row -->
@@ -121,14 +143,21 @@
           <span>{{ snack.mealType }}</span>
         </div>
       </div> <!-- 'meal-info' -->
-
-      <div class="breakfast-expand-container">
-        <a data-toggle="modal" data-target="#inputFoodModal">
-          <i class="fa fa-chevron-down expand-arrow"></i>
-          <span class="expand">Edit</span>
-        </a>
-      </div>
     </div><!-- 'main-container' -->
+
+    <!-- Blank template to add a new food item -->
+    <div class="meal-container blank-template">
+      <div class="meal-info">
+        <div id="add-meal">
+          <a data-toggle="modal" data-target="#inputFoodModal">
+            <div class="add-meal-container">
+              <i class="fa fa-plus add-meal-icon"></i>
+              <span class="add-meal-modal">Add A Meal</span>
+            </div>
+          </a>
+        </div>
+      </div> <!-- 'meal-info' -->
+    </div> <!-- 'meal-container' -->
 </div> <!-- 'snacks-row' -->
 
 <div class="modal openModal" id="inputFoodModal" tabindex="-1" role="dialog">
@@ -180,3 +209,20 @@
     </div><!-- 'modal-content' -->
   </div> <!-- 'modal-dialog' -->
 </div><!-- 'modal' -->
+
+
+<!-- Deprecated Code -->
+<!-- <div class="meal-container">
+  <div class="meal-info">
+    <div class="breakfast-expand-container">
+      <a data-toggle="modal" data-target="#inputFoodModal">
+        <i class="fa fa-chevron-down expand-arrow"></i>
+        <span class="expand">Add A Meal</span>
+      </a>
+    </div>
+    <div class="display-name truncate-ellipsis spacer-bottom">Food Title Goes Here</div>
+    <div class="isplay-weblink truncate-ellipsis spacer-bottom">Web Address Goes Here</div>
+    <div class="display-cooktime spacer-bottom">Cook Time</div>
+    <div class="display-type spacer-bottom">Which Meal of the Day?</div>
+  </div>
+</div> -->

@@ -33,7 +33,7 @@ angular.module('meal-planning')
       dfd.reject(err);
     })
     return dfd.promise;
-  }
+  };
 
   this.getBreakfasts = function() {
     var dfd = $q.defer();
@@ -49,7 +49,7 @@ angular.module('meal-planning')
       dfd.reject(err);
     })
     return dfd.promise;
-  }
+  };
 
   this.getLunches = function() {
     var dfd = $q.defer();
@@ -65,45 +65,45 @@ angular.module('meal-planning')
       dfd.reject(err);
     })
     return dfd.promise;
-  }
+  };
 
-this.getDinners = function() {
-  var dfd = $q.defer();
+  this.getDinners = function() {
+    var dfd = $q.defer();
 
-  $http({
-    method: "GET",
-    url: "/api/foodItems/dinner"
-  })
-  .then(function(response) {
-    dfd.resolve(response.data);
-  })
-  .catch(function(err) {
-    dfd.reject(err);
-  })
+    $http({
+      method: "GET",
+      url: "/api/foodItems/dinner"
+    })
+    .then(function(response) {
+      dfd.resolve(response.data);
+    })
+    .catch(function(err) {
+      dfd.reject(err);
+    })
 
-  return dfd.promise;
-}
+    return dfd.promise;
+  };
 
-this.getSnacks = function() {
-  var dfd = $q.defer();
+  this.getSnacks = function() {
+    var dfd = $q.defer();
 
-  $http({
-    method: "GET",
-    url: "/api/foodItems/snacks"
-  })
-  .then(function(response) {
-    dfd.resolve(response.data);
-  })
-  .catch(function(err) {
-    dfd.reject(err);
-  })
+    $http({
+      method: "GET",
+      url: "/api/foodItems/snacks"
+    })
+    .then(function(response) {
+      dfd.resolve(response.data);
+    })
+    .catch(function(err) {
+      dfd.reject(err);
+    })
 
-  return dfd.promise;
-}
+    return dfd.promise;
+  };
 
   this.getIngredients = function() {
     return ingredientsList;
-  }
+  };
 
   // Fake data - always a bad practice but oh well
   var ingredientsList = [

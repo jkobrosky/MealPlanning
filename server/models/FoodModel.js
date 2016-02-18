@@ -6,7 +6,7 @@ var foodSchema = new Schema({
   weblink: { type: String },
   cookTime: { type: String },
   mealType: { type: String, required: false },
-  ingredients: { type: String, index: true, required: true },
+  ingredients: [{ type: String, index: true, required: true }],
   notes: { type: String, required: false }
 });
 

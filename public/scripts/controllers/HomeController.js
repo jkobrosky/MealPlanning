@@ -1,5 +1,9 @@
 angular.module('meal-planning')
-.controller('HomeController', function($scope, homeService, infoStorage){
+.controller('HomeController', function($scope, homeService, infoStorage, initialBreakfast, initialLunch, initialDinner, initialSnacks){
+  $scope.breakfasts = initialBreakfast;
+  $scope.lunches = initialLunch;
+  $scope.dinners = initialDinner;
+  $scope.snacks = initialSnacks;
 
   $scope.getIngredients = function() {
     $scope.ingredientsList = homeService.getIngredients();
@@ -16,13 +20,17 @@ angular.module('meal-planning')
     homeService.getBreakfasts()
     .then(function(response) {
       $scope.breakfasts = response;
+      //$scope.getBreakfasts();
     })
   }
 
   $scope.getLunches = function() {
     homeService.getLunches()
     .then(function(response) {
+      console.log('response from infoStorage ', response);
       $scope.lunches = response;
+      //console.log('length of lunches ', $scope.lunches.length);
+      //$scope.getLunches();
     })
   }
 
@@ -30,6 +38,7 @@ angular.module('meal-planning')
     homeService.getDinners()
     .then(function(response) {
       $scope.dinners = response;
+      //$scope.getDinners();
     })
   }
 
@@ -37,6 +46,7 @@ angular.module('meal-planning')
     homeService.getSnacks()
     .then(function(response) {
       $scope.snacks = response;
+      //$scope.getSnacks();
     })
   }
 
@@ -52,14 +62,15 @@ angular.module('meal-planning')
       $scope.getLunches();
       $scope.getDinners();
       $scope.getSnacks();
+
     })
   }
 
-  $scope.getIngredients();
-  $scope.getMeals();
-  $scope.getBreakfasts();
-  $scope.getLunches();
-  $scope.getDinners();
-  $scope.getSnacks();
+  // $scope.getIngredients();
+  // $scope.getMeals();
+  // $scope.getBreakfasts();
+  // $scope.getLunches();
+  // $scope.getDinners();
+  // $scope.getSnacks();
 
 })

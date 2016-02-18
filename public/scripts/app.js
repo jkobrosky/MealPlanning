@@ -4,7 +4,66 @@ angular.module('meal-planning', ['ngRoute'])
   $routeProvider
   .when('/home', {
     templateUrl: 'views/home.html',
-    controller: 'HomeController'
+    controller: 'HomeController',
+    resolve: {
+      initialBreakfast: function($q, homeService, infoStorage) {
+        var dfd = $q.defer();
+
+        homeService.getBreakfasts()
+        .then(function(response) {
+          dfd.resolve(response);
+        })
+        .catch(function(err) {
+          console.error(err);
+          dfd.reject(err);
+        })
+        return dfd.promise;
+      },
+
+      initialLunch: function($q, homeService) {
+        var dfd = $q.defer();
+
+        homeService.getLunches()
+        .then(function(response) {
+          dfd.resolve(response);
+        })
+        .catch(function(err) {
+          console.error(err);
+          dfd.reject(err);
+        })
+        return dfd.promise;
+      },
+
+      initialDinner: function($q, homeService) {
+        var dfd = $q.defer();
+
+        homeService.getDinners()
+        .then(function(response) {
+          dfd.resolve(response);
+        })
+        .catch(function(err) {
+          console.error(err);
+          dfd.reject(err);
+        })
+
+        return dfd.promise;
+      },
+
+      initialSnacks: function($q, homeService) {
+        var dfd = $q.defer();
+
+        homeService.getSnacks()
+        .then(function(response) {
+          dfd.resolve(response);
+        })
+        .catch(function(err) {
+          console.error(err);
+          dfd.reject(err);
+        })
+
+        return dfd.promise;
+      }
+    },
   })
 
   .when('/recipes', {

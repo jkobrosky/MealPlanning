@@ -1,7 +1,7 @@
 angular.module('meal-planning')
 .factory('infoStorage', function() {
   var service = {};
-
+  var breakfasts = {};
   var meals;
 
   // Food Items
@@ -10,6 +10,16 @@ angular.module('meal-planning')
   }
   service.getMeals = function() {
     return meals;
+  }
+
+  service.saveBreakfastData = function(breakfastItems) {
+    console.log('saving in infoStorage ', breakfastItems);
+    breakfasts = breakfastItems;
+  }
+
+  service.serveBreakfasts = function() {
+    console.log('return from infoStorage ', breakfasts);
+    return breakfasts;
   }
 
   return service;

@@ -8,7 +8,7 @@ exports.createNewFood = function(req, res) {
     if (err) {
       res.status(500).json(err);
     } else {
-      res.json(data);
+      return res.json(data);
     }
   })
 };
@@ -18,7 +18,7 @@ exports.getAllFoods = function(req, res) {
     if (err) {
       res.status(500).json(err);
     } else {
-      res.json(data);
+      return res.json(data);
     }
   })
 };
@@ -28,7 +28,7 @@ exports.getAllBreakfast = function(req, res) {
     if (err) {
       res.status(500).json(err);
     } else {
-      res.json(data);
+      return res.json(data);
     }
   })
 };
@@ -38,7 +38,7 @@ exports.getAllLunch = function(req, res) {
     if (err) {
       res.status(500).json(err);
     } else {
-      res.json(data);
+      return res.json(data);
     }
   })
 };
@@ -48,7 +48,7 @@ exports.getAllDinner = function(req, res) {
     if (err) {
       res.status(500).json(err);
     } else {
-      res.json(data);
+      return res.json(data);
     }
   })
 };
@@ -58,7 +58,7 @@ exports.getAllSnacks = function(req, res) {
     if (err) {
       res.status(500).json(err);
     } else {
-      res.json(data);
+      return res.json(data);
     }
   })
 };
