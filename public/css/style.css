@@ -10,11 +10,12 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 #nav-section {
-  max-height: 42px;
+  max-height: 56px;
   width: 100%;
   margin: 0;
   padding: 0;
   background: #dcdcdc;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 #nav-section .navigation .nav-btn-container {
   float: left;
@@ -59,32 +60,43 @@ body {
   margin: 0;
 }
 .main-container {
-  padding: 24px 36px;
+  padding: 24px;
+}
+.main-container .row {
+  height: 145px;
+  margin-bottom: 12px;
+  margin-left: 0;
+}
+.main-container .blank-template {
+  margin-left: -4px;
 }
 .main-container .favorite {
   position: relative;
   float: right;
   z-index: 2;
-  padding-top: 5px;
+  padding-top: 8px;
 }
 .main-container .favorite .favorite-star {
-  padding: 6px 6px 0 0;
+  padding: 8px 8px 0 0;
   font-size: 24px;
 }
 .main-container .meal-container {
   width: 267px;
-  height: 140px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid #000;
-  border-radius: 5px;
+  height: 145px;
+  margin-right: 12px;
+  padding: 8px;
   background-color: #fff;
   overflow: hidden;
   display: inline-block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.main-container .meal-container:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .main-container .meal-container .meal-info {
-  padding: 10px;
+  padding: 12px;
+  padding-bottom: 0;
 }
 .main-container .meal-container .meal-info .display-name {
   width: 90%;
@@ -110,7 +122,7 @@ body {
   float: right;
 }
 .main-container .meal-container .expand {
-  padding-right: 6px;
+  padding-right: 8px;
 }
 .main-container .meal-container .expand-arrow {
   padding-top: 1px;
@@ -119,7 +131,7 @@ body {
   position: relative;
   top: -30px;
   float: right;
-  padding-right: 5px;
+  padding-right: 8px;
   z-index: 10;
   font-size: 10px;
 }
@@ -130,10 +142,10 @@ body {
   position: relative;
   float: right;
   z-index: 2;
-  padding: 10px;
+  padding: 12px;
 }
 #inputFoodModal .favorite .favorite-star {
-  padding: 6px 6px 0 0;
+  padding: 8px 8px 0 0;
   font-size: 30px;
 }
 #inputFoodModal .group {
@@ -145,7 +157,7 @@ body {
   display: block;
   font-size: 18px;
   font-weight: 700;
-  padding: 10px 0 0 5px;
+  padding: 12px 0 0 4px;
   border: none;
 }
 #inputFoodModal .group input:focus {
@@ -246,7 +258,7 @@ body {
   width: 253px;
   display: block;
   font-size: 13px;
-  padding: 3px 0 5px 5px;
+  padding: 4px 0 8px 8px;
   border: none;
 }
 #inputFoodModal .small-group input:focus {
@@ -278,7 +290,7 @@ body {
 }
 #add-meal .add-meal-container {
   margin-top: -10px;
-  padding-left: 75px;
+  padding-left: 72px;
 }
 #add-meal .add-meal-container .add-meal-icon {
   display: block;
@@ -307,7 +319,7 @@ body {
   background-color: #efefef;
 }
 .spacer-bottom {
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
 .spacer-bottom > label {
   margin-bottom: 0;
@@ -322,4 +334,7 @@ body {
   display: table-cell;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+#inputFoodModal .modal-content {
+  border-radius: 0;
 }
