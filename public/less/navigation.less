@@ -1,5 +1,5 @@
 #nav-section {
-  max-height: 56px;
+  height: 56px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -10,15 +10,23 @@
 
     .nav-btn-container {
       float: left;
-      padding: 0 8px;
+      padding: 0 @padding-medium;
+
+      .nav {
+        margin-top: @padding-normal;
+
+        li > a:hover {
+          border-radius: 0;
+        }
+      }
     }
 
     .profile-container {
       float: right;
-      //padding: 32px;
+      padding: @padding-normal;
 
       .dropdown {
-        margin: 4px;
+        margin: @margin-small;
 
         .account-dropdown {
           background: none;
@@ -32,7 +40,7 @@
     .mini-nav {
 
       .content-menu {
-        padding: 12px;
+        padding: @padding-medium;
         font-size: 1.5em;
       }
     }
