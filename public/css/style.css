@@ -24,6 +24,9 @@ body {
 #nav-section .navigation .nav-btn-container .nav {
   margin-top: 8px;
 }
+#nav-section .navigation .nav-btn-container .nav li > a {
+  border-radius: 0;
+}
 #nav-section .navigation .nav-btn-container .nav li > a:hover {
   border-radius: 0;
 }
@@ -72,6 +75,9 @@ body {
 .main-container .row {
   height: 145px;
   margin-bottom: 12px;
+  margin-left: 0;
+}
+.main-container .blank-template:first-child {
   margin-left: 0;
 }
 .main-container .blank-template {

@@ -4,12 +4,21 @@ angular.module('meal-planning', ['ngRoute'])
   $routeProvider
   .when('/home', {
     templateUrl: 'views/home.html',
-    controller: 'HomeController',
+    controller: 'HomeController'
+  })
+
+  .when('/recipes', {
+    templateUrl: 'views/recipes.html'
+  })
+
+  .when('/calendar', {
+    templateUrl: 'views/calendar.html',
+    controller: 'CalendarController',
     resolve: {
-      initialBreakfast: function($q, homeService, infoStorage) {
+      initialBreakfast: function($q, calendarService, infoStorage) {
         var dfd = $q.defer();
 
-        homeService.getBreakfasts()
+        calendarService.getBreakfasts()
         .then(function(response) {
           dfd.resolve(response);
         })
@@ -20,10 +29,10 @@ angular.module('meal-planning', ['ngRoute'])
         return dfd.promise;
       },
 
-      initialLunch: function($q, homeService) {
+      initialLunch: function($q, calendarService) {
         var dfd = $q.defer();
 
-        homeService.getLunches()
+        calendarService.getLunches()
         .then(function(response) {
           dfd.resolve(response);
         })
@@ -34,10 +43,10 @@ angular.module('meal-planning', ['ngRoute'])
         return dfd.promise;
       },
 
-      initialDinner: function($q, homeService) {
+      initialDinner: function($q, calendarService) {
         var dfd = $q.defer();
 
-        homeService.getDinners()
+        calendarService.getDinners()
         .then(function(response) {
           dfd.resolve(response);
         })
@@ -49,10 +58,10 @@ angular.module('meal-planning', ['ngRoute'])
         return dfd.promise;
       },
 
-      initialSnacks: function($q, homeService) {
+      initialSnacks: function($q, calendarService) {
         var dfd = $q.defer();
 
-        homeService.getSnacks()
+        calendarService.getSnacks()
         .then(function(response) {
           dfd.resolve(response);
         })
@@ -64,14 +73,6 @@ angular.module('meal-planning', ['ngRoute'])
         return dfd.promise;
       }
     },
-  })
-
-  .when('/recipes', {
-    templateUrl: 'views/recipes.html'
-  })
-
-  .when('/calendar', {
-    templateUrl: 'views/calendar.html'
   })
 
   .when('/shopping', {

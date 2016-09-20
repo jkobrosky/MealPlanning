@@ -7,7 +7,8 @@ var foodSchema = new Schema({
   cookTime: { type: String },
   mealType: { type: String, required: false },
   ingredients: [{ type: String, index: true, required: true }],
-  notes: { type: String, required: false }
+  notes: { type: String, required: false },
+  owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
 });
 
 module.exports = mongoose.model('Food', foodSchema);

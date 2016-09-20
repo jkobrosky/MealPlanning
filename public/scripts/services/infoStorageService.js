@@ -3,6 +3,7 @@ angular.module('meal-planning')
   var service = {};
   var breakfasts = {};
   var meals;
+  var currentWeek;
 
   // Food Items
   service.saveMeals = function(passedMeals) {
@@ -20,6 +21,10 @@ angular.module('meal-planning')
   service.serveBreakfasts = function() {
     console.log('return from infoStorage ', breakfasts);
     return breakfasts;
+  }
+
+  service.currentWeek = function() {
+    console.log('current week is ', currentWeek);
   }
 
   return service;
